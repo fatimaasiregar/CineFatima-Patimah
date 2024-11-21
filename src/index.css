@@ -1,0 +1,56 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('public/movies.jpg') no-repeat center center; /* Gambar sebagai latar */
+  background-size: cover; /* Gambar mengisi seluruh layar */
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Overlay dan teks di latar belakang */
+.login-container::before {
+  content: 'CineFatima'; /* Teks background */;
+  position: absolute;
+  top: 10%; /* Atur posisi vertikal */
+  left: 50%; /* Pusatkan teks secara horizontal */
+  transform: translateX(-50%); /* Agar teks benar-benar berada di tengah */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Font playful */
+  font-size: 80px; /* Ukuran font yang lebih besar */
+  font-weight: bold;
+  letter-spacing: 5px; /* Jarak antar huruf */
+  z-index: 1; /* Pastikan teks berada di bawah elemen lain */
+  pointer-events: none; /* Agar teks tidak dapat diinteraksi */
+  opacity: 0.9; /* Sedikit transparan untuk kesan elegan */
+
+  /* Efek gradasi warna */
+  background: linear-gradient(90deg, #ff7eb3, #ff758c, #ff5858); /* Gradasi pink ke merah */
+  -webkit-background-clip: text; /* Gradasi warna hanya terlihat pada teks */
+  -webkit-text-fill-color: transparent; /* Membuat isi teks transparan */
+  background-clip: text; /* Dukungan untuk browser modern */
+  text-fill-color: transparent; /* Dukungan untuk browser modern */
+
+  /* Tambahkan efek bayangan */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Bayangan gelap untuk menonjolkan teks */
+}
+
+.login-form {
+  z-index: 2; /* Form tetap di atas overlay dan teks latar */
+  margin-top: 20px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.85); /* Latar belakang form login */
+  width: 350px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsif: Menyesuaikan ukuran layar */
+@media (max-width: 768px) {
+  .login-container::before {
+    font-size: 40px; /* Ukuran teks lebih kecil pada layar kecil */
+    top: 8%; /* Posisi teks sedikit turun */
+  }
+}
